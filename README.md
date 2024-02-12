@@ -1,5 +1,5 @@
 # Template:
-[![<ORG_NAME>](https://circleci.com/gh/cleristonmartins9102/Seenit.svg?style=svg)](<LINK>)
+[![cleristonmartins9102](https://circleci.com/gh/cleristonmartins9102/Seenit.svg?style=svg)](<LINK>)
 
 <!-- # Example:
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
