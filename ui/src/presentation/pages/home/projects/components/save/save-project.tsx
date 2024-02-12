@@ -42,7 +42,7 @@ export const saveProject: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>
   }
 
   const handleRequest = async (e): Promise<void> => {
-    if (currentProject) {
+    if (!currentProject) {
       const resp = await remoteSaveProject(projectCollection.getValue())
       addAloneProject(resp)
     } else {
