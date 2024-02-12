@@ -8,10 +8,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-          command: ls
-      # - run:
-      #     name: Compile Source Code
-      #     command: npm run build
+      - run:
+          name: Install Dependencia on User
+          command: cd deploy/user && npm i
       - run:
           name: Run Unit Tests
           command: npm test
