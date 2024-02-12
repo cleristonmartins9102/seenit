@@ -133,7 +133,7 @@ Preparing docker image`)
   });
 
   await Task.forItem('deploying frontend', 'docker build -t frontend', async () => {
-    await exec(`docker build  -t frontend ${__dirname}/deploy/frontend/.`)
+    await exec(`docker build --no-cache -t frontend ${__dirname}/deploy/frontend/.`)
   });
 
   Task.section(`

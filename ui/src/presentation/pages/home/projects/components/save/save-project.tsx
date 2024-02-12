@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 import { remoteUpdateProject } from '@/data/load-projects/remote-update-project'
 
 const projectCollection = new FormCollection()
+projectCollection.add('id', new FormField())
 projectCollection.add('name', new FormField([new RequiredFieldValidator('name'), new MinLengthValidator('name', 2)]))
 projectCollection.add('description', new FormField([new RequiredFieldValidator('description'), new MinLengthValidator('description', 2)]))
 
@@ -37,13 +38,18 @@ export const saveProject: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>
   }, [])
 
   const populate = (data: ProjectModel): void => {
+    projectCollection.getField('id').setValue(data?.id ?? null)
     projectCollection.getField('name').setValue(data.name)
     projectCollection.getField('description').setValue(data.description)
   }
 
   const handleRequest = async (e): Promise<void> => {
     if (!currentProject) {
-      const resp = await remoteSaveProject(projectCollection.getValue())
+      const data = projectCollection.getValue()
+      if (data.id === '') {
+        delete data.id
+      }
+      const resp = await remoteSaveProject(data)
       addAloneProject(resp)
     } else {
       await remoteUpdateProject(projectCollection.getValue())
