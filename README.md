@@ -1,11 +1,11 @@
 # Template:
-[![cleristonmartins9102](https://circleci.com/gh/cleristonmartins9102/Seenit.svg?style=svg)](<LINK>)
+[![cci-1r1h7k](https://circleci.com/gh/cci-1r1h7k/Seenit.svg?style=svg)](<LINK>)
 
-# Example:
+<!-- # Example:
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
 
 # Example for specific branch:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs/?branch=teesloane-patch-5)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs/?branch=teesloane-patch-5) -->
 
 ### Seenit Test
 
