@@ -1,0 +1,25 @@
+{
+  "name": "@seenit-common/errors",
+  "version": "1.0.3",
+  "description": "",
+  "main": "./build/errors/index.d.ts",
+  "types": "./build/errors/index.d.ts",
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "npm run clean && tsc",
+    "pub": "git c 'updates' && npm version patch && npm run build && npm publish"
+  },
+  "repository": {
+    "url": "http://"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  }
+}

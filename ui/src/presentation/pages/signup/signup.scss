@@ -1,0 +1,67 @@
+@import '../../../shared/styles/global.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  .conainerSignup {
+    overflow: hidden;
+    width: 700px;
+    height: 500px;
+    border: 1px solid rgba(#a2a1a1, 0.7);
+    background-color: #EEE;
+    box-shadow: 10px 10px 4px #333;
+
+    .header {
+      background-color: #2f55a4;
+      line-height: 40px;
+      text-align: center;
+      color: white;
+      text-shadow: $textShadow;
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+
+    .form {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      input, label {
+        font-size: 20px;
+      }
+      .wrapAvatar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          width: 200px;
+          max-width: 200px;
+          height: 200px;
+          max-height: 400px;
+          flex: 1
+        }
+
+        .wrapNames {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding-left: 10px;
+          gap: 10px;
+          .wrapInput {
+            width: 100%;
+          }
+        }
+      }
+      button {
+        margin-top: 30px;
+        align-self: center; 
+      }
+    }
+  }
+}

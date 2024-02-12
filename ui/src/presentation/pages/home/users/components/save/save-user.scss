@@ -1,0 +1,78 @@
+@import '../../../../../../shared/styles/global.scss';
+
+.wrapName {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  button {
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  .wrapUl {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    tr {
+      width: 100%;
+    }
+  }
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.wrapUl {
+  table-layout: fixed;
+  width: calc(100% - 40px);
+  border-collapse: collapse;
+
+  th {
+    width: 400px;
+    background-color: rgb(126, 49, 128);
+    span {
+      font-size: 18px;
+      width: 100%;
+      color: white;
+      text-shadow: $textShadow;
+    }
+  }
+  .appName {
+    text-align: center;
+  }
+  tr {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+   
+    
+    &:nth-child(even) {
+      background-color: #CCC;
+    }
+
+    &:nth-child(odd) {
+      background-color: #EEE;
+    }
+
+    // &:hover {
+    //   background-color: #8b8888;
+    // }
+
+    td {
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:last-child {
+        padding-left: 10px;
+      }
+      
+      height: 40px;
+      border: none;
+    }
+  }
+}

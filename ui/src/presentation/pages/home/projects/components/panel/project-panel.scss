@@ -1,0 +1,11 @@
+@import '../../../../../../shared/styles/global.scss';
+
+.list {
+  width: 100%;
+  .listHeader {
+    border: 1px solid #858181;
+    width: 100%;
+    line-height: 60px;;
+    padding: 6px;
+  }
+}

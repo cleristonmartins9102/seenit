@@ -1,0 +1,52 @@
+@import '../../../../../../shared/styles/global.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  table {
+    width: calc(100% - 40px);
+    margin: 20px;
+    border-collapse: collapse;
+    th {
+      text-align: start;
+      background-color: #576c99;
+      color: white;
+      text-shadow: $textShadow;
+    }
+
+    tbody tr {
+      &:nth-child(even) {
+        background-color: #CCC;
+      }
+
+      &:nth-child(odd) {
+        background-color: #EEE;
+      }
+    }
+
+    td, th {
+      
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:last-child {
+        padding-right: 10px;
+      }
+      
+      height: 40px;
+      border: none;
+    }
+
+
+
+    tbody tr {
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        background-color: #8b8888;
+      }
+    }
+  }
+}

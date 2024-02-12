@@ -1,0 +1,88 @@
+@import '../../../shared/styles/global.scss';
+
+.wrapText {
+  display: flex;
+  flex-direction: column  ;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($white, 0.7);
+  z-index: 10000;
+  .text {
+    font-size: 42px;
+    text-align: center;
+		color: rgba(255, 255, 255, 0.1);
+		background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		-webkit-background-size: 125px 100%;
+		-moz-background-size: 125px 100%;
+		background-size: 125px 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		background-clip: text;
+		-webkit-animation-name: shimmer;
+		-moz-animation-name: shimmer;
+		animation-name: shimmer;
+		-webkit-animation-duration: 1s;
+		-moz-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		background-repeat: no-repeat;
+		// background-position: top 0 left -100%;
+		background-color: $black;
+    // overflow: hidden;
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapText {
+    .text {
+      font-size: 24px; 
+    }
+  }
+}
+
+
+@-moz-keyframes shimmer {
+  0% {
+		background-position: top 0 left -10%;
+  }
+  100% {
+    background-position: top 0 right -10%;
+  }
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+		background-position: top 0 left -10%;
+  }
+  100% {
+    background-position: top 0 right -10%;
+  }
+}
+
+@-o-keyframes shimmer {
+  0% {
+		background-position: top 0 left -10%;
+  }
+  100% {
+    background-position: top 0 right -10%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+		background-position: top 0 left -10%;
+  }
+  100% {
+      background-position: top 0 right -110px;
+  }
+}
