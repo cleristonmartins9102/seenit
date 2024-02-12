@@ -1,44 +1,40 @@
-version: 2
-
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:10.14.2
-
+version: 2.1
 jobs:
-  core:
-    <<: *defaults
-    working_directory: ~/repo
-
+  build:
+    docker:
+      - image: cimg/node:20.5.0
     steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: npm ci
-
-      - run: npm run test:ci
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
+      - checkout # Check out the code from the repository
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Compile Source Code
+          command: npm run build
+      - run:
+          name: Run Unit Tests
+          command: npm test
+      - run:
+          name: Run ESLint
+          command: npm run lint
+- run:
+    name: Deploy to Kinsta
+    command: |
+      curl -i -X POST 
+        https://api.kinsta.com/v2/applications/deployments 
+        -H "Authorization: Bearer $API_KEY" 
+        -H "Content-Type: application/json" 
+        -d '{
+          "app_id": "'"$APP_ID"'",
+          "branch": "main"
+        }'
 
 workflows:
   version: 2
-  core:
+  build-test-lint:
     jobs:
-      - core:
+      - build:
           filters:
             branches:
               only:
-                - master
+                - main
