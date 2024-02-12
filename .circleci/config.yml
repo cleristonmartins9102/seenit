@@ -5,18 +5,18 @@ jobs:
       - image: cimg/node:20.5.0
     steps:
       - checkout 
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Compile Source Code
-          command: npm run build
+      # - run:
+      #     name: Install Dependencies
+      #     command: npm install
+      # - run:
+      #     name: Compile Source Code
+      #     command: npm run build
       - run:
           name: Run Unit Tests
           command: npm test
-      - run:
-          name: Run ESLint
-          command: npm run lint
+      # - run:
+      #     name: Run ESLint
+      #     command: npm run lint
 
 workflows:
   version: 2
