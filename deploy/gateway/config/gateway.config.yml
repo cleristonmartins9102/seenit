@@ -1,0 +1,125 @@
+http:
+  port: 5050
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  api:
+    host: "*"
+    paths: '/ip'
+
+  PROJECT:
+    host: "*"
+    methods: "*"
+    paths: [
+      '/api/create',
+      '/api/load',
+      '/api/update',
+      '/api/delete'
+    ]
+
+  USER:
+    host: "*"
+    methods: "*"
+    paths: [
+      '/api/load',
+      '/api/update',
+      '/api/delete'
+    ]
+
+  GRAPHQL:
+    host: "*"
+    methods: "*"
+    paths: [
+      '/graphql'
+    ]
+
+  SWAGEER:
+    host: "*"
+    methods: "*"
+    paths: [
+      '/api-docs'
+    ]
+
+  
+serviceEndpoints:
+    httpbin:
+      url: 'https://httpbin.org'
+       
+    projectService:
+      url: 'http://project-container:3001'
+
+    userService:
+      url: 'http://user-container:3000'
+
+    swageerService:
+      url: 'http://swageer-container:5052'
+
+    graphqlService:
+      url: 'http://graphql-container:5051'
+
+
+
+policies:
+  - jwt
+  - request-transformer
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+      - cors:    
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin
+              changeOrigin: true
+
+  projectPipeline:
+    apiEndpoints:
+      - PROJECT
+    policies:
+      - cors:    
+      - proxy:
+          - action:
+              serviceEndpoint: projectService
+              changeOrigin: true
+
+  userPipeline:
+    apiEndpoints:
+      - USER
+    policies:
+      - cors:    
+      - proxy:
+          - action:
+              serviceEndpoint: userService
+              changeOrigin: true
+
+  swageerPipeline:
+    apiEndpoints:
+      - SWAGEER
+    policies:
+      - cors:    
+      - proxy:
+          - action:
+              serviceEndpoint: swageerService
+              changeOrigin: true
+
+  graphqlPipeline:
+    apiEndpoints:
+      - GRAPHQL
+    policies:
+      - cors:    
+      - proxy:
+          - action:
+              serviceEndpoint: graphqlService
+              changeOrigin: true
+
+  
