@@ -20,7 +20,7 @@ jobs:
 
 workflows:
   version: 2
-  build-test-lint:
+  build-tests:
     jobs:
       - build:
           filters:
