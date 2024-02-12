@@ -12,6 +12,12 @@ jobs:
           name: Install Dependencia on User
           command: cd deploy/user && npm i
       - run:
+          name: Install Dependencia on Project
+          command: cd deploy/project && npm i
+      - run:
+          name: Install Dependencia on Graphql
+          command: cd deploy/graphql && npm i
+      - run:
           name: Run Unit Tests
           command: npm test
       # - run:
