@@ -5,9 +5,9 @@ jobs:
       - image: cimg/node:20.5.0
     steps:
       - checkout 
-      # - run:
-      #     name: Install Dependencies
-      #     command: npm install
+      - run:
+          name: Install Dependencies
+          command: npm install
       # - run:
       #     name: Compile Source Code
       #     command: npm run build
