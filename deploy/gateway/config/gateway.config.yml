@@ -12,19 +12,22 @@ apiEndpoints:
     host: "*"
     methods: "*"
     paths: [
-      '/api/create',
-      '/api/load',
-      '/api/update',
-      '/api/delete'
+      '/api/project/create',
+      '/api/project/load',
+      '/api/project/update',
+      '/api/project/delete'
     ]
+
+ 
 
   USER:
     host: "*"
     methods: "*"
     paths: [
-      '/api/load',
-      '/api/update',
-      '/api/delete'
+      '/api/user/signup',
+      '/api/user/load',
+      '/api/user/update',
+      '/api/user/delete'
     ]
 
   GRAPHQL:
@@ -39,6 +42,13 @@ apiEndpoints:
     methods: "*"
     paths: [
       '/api-docs'
+    ]
+
+  FRONTEND:
+    host: "*"
+    methods: "*"
+    paths: [
+      '/'
     ]
 
   
@@ -57,6 +67,9 @@ serviceEndpoints:
 
     graphqlService:
       url: 'http://graphql-container:5051'
+
+    frontEndService:
+      url: 'http://frontend-container:5053'
 
 
 
@@ -120,6 +133,16 @@ pipelines:
       - proxy:
           - action:
               serviceEndpoint: graphqlService
+              changeOrigin: true
+
+  frontendPipeline:
+    apiEndpoints:
+      - FRONTEND
+    policies:
+      - cors:    
+      - proxy:
+          - action:
+              serviceEndpoint: frontEndService
               changeOrigin: true
 
   
