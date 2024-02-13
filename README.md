@@ -1,12 +1,3 @@
-# Template:
-[![cci-1r1h7k](https://circleci.com/gh/cci-1r1h7k/Seenit.svg?style=svg)](<LINK>)
-
-<!-- # Example:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
-
-# Example for specific branch:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs/?branch=teesloane-patch-5) -->
-
 ### Seenit Test
 
 #### Guideline
@@ -15,7 +6,7 @@
 * Common codes are beeing shared beetwen services (@seenit-common/decrypter @seenit-common/errors)
 * The layer infra, keep all adapters and repositories, making easy to add a real database or another type of repository, as filestorage.
 
-#### Security
+#### Securityx
 1. Auth based JWT
 2. Cryptograph SHA256
 3. Token duration 24 hours
@@ -68,6 +59,9 @@ __The prepare infra will build the services images and to run them__
 * Ora
 * Opener
 * Child Process
+
+### Architecture
+* Clean Architecture
 
 #### Doc
 * http://127.0.0.1:5052/api-docs
