@@ -64,7 +64,7 @@ __The prepare infra will build the services images and to run them__
 * Clean Architecture
 
 #### Doc
-* http://127.0.0.1:5052/api-docs
+* http://127.0.0.1:8080/api-docs
 
 #### GQL
-* http://127.0.0.1:5050/graphql
+* http://127.0.0.1:8080/graphql
